@@ -12,6 +12,7 @@
     this.apple = this.board.apple;
     this.turnFlag = false;
     this.paused = false;
+    this.ready = false;
     this.initBoard();
 
     this.bindListeners();    
@@ -19,6 +20,10 @@
       that.step();
     }, 100);
 
+
+    $ready = $('.ready')
+    $('.main').append($ready);
+    $('.ready').css('display', 'block');
   };
 
   View.prototype.initBoard = function(){
@@ -129,7 +134,7 @@
   };
 
   View.prototype.step = function(){
-    if (!this.paused){
+    if (!this.paused && this.ready){
       this.resetTurnFlag();
       this.drawBoard();
       this.drawScore();
@@ -181,7 +186,12 @@
   };
 
   View.prototype.handleKeyEvent = function(key) {
-
+    if (!this.ready){
+      this.ready = true;
+      $ready = $('.ready')
+      $ready.remove();
+    }
+    
     if (key == 27){
       this.paused = this.paused ? false : true;
       this.drawBoard();
