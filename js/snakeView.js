@@ -15,6 +15,23 @@
     this.ready = false;
     this.initBoard();
 
+    //preload images to minimize flicker
+    this.preload([
+    'img/apple.png',
+    'img/downleft.gif',
+    'img/downright.gif',
+    'img/upleft.gif',
+    'img/upright.gif',
+    'img/snake-down.gif',
+    'img/snake-left.gif',
+    'img/snake-right.gif',
+    'img/snake-up.gif',
+    'img/tail-down.gif',
+    'img/tail-left.gif',
+    'img/tail-right.gif',
+    'img/tail-up.gif'
+    ]);
+
     this.bindListeners();    
     this.gameLoop = setInterval(function(){
       that.step();
@@ -25,6 +42,12 @@
     $('.main').append($ready);
     $('.ready').css('display', 'block');
   };
+
+  View.prototype.preload = function(arrayOfImages) {
+    $(arrayOfImages).each(function () {
+        $('<img />').attr('src',this).appendTo('body').css('display','none');
+    });
+  }
 
   View.prototype.initBoard = function(){
     for(var row = 0; row < this.height; row++) {
