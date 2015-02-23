@@ -1,5 +1,8 @@
 # Snake
 
+![preview]
+[preview]:	./docs/preview.png
+
 [Demo][sitelink]
 
 [sitelink]: http://nickarora.github.io/snake/
