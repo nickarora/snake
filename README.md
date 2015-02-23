@@ -1,11 +1,10 @@
 # Snake
 
+[Live Demo][sitelink]
+[sitelink]: http://nickarora.github.io/snake/
+
 ![preview]
 [preview]:	./docs/preview.png
-
-[Demo][sitelink]
-
-[sitelink]: http://nickarora.github.io/snake/
 
 ## Description
 Snake is a clone of the classic 1970s arcade game of the same name (although it is more commonly known from its inclusion on cell phones in recent years).
