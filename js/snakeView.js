@@ -183,7 +183,19 @@
     $(window).keydown(function(event){
       that.handleKeyEvent(event.keyCode);
     });
+
+    $(window).click(function(event){
+      that.handleClickEvent(event);
+    });
   };
+
+  View.prototype.handleClickEvent = function(event){
+    if (!this.ready){
+      this.ready = true;
+      $ready = $('.ready')
+      $ready.remove();
+    }
+  }
 
   View.prototype.handleKeyEvent = function(key) {
     if (!this.ready){
